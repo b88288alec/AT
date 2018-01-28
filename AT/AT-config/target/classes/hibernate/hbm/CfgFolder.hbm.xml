@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class catalog="TFHK" name="com.tfhk.cfgfolder.model.CfgFolder" table="cfg_folder">
+  <composite-id class="com.tfhk.cfgfolder.model.CfgFolderId" mapped="false"
+   name="id" unsaved-value="undefined">
+   <key-property name="folderPath" type="string">
+    <column length="50" name="FOLDER_PATH"/>
+   </key-property>
+   <key-property name="account" type="string">
+    <column length="30" name="account"/>
+   </key-property>
+  </composite-id>
+  <property generated="never" lazy="false" name="folderName" type="string">
+   <column length="50" name="FOLDER_NAME" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="rootPath" type="string">
+   <column length="50" name="ROOT_PATH"/>
+  </property>
+  <property generated="never" lazy="false" name="updateDate" type="date">
+   <column length="10" name="update_date"/>
+  </property>
+  <property generated="never" lazy="false" name="createDate" type="date">
+   <column length="10" name="create_date"/>
+  </property>
+  <property generated="never" lazy="false" name="fileType" type="string">
+   <column length="50" name="FILE_TYPE"/>
+  </property>
+ </class>
+</hibernate-mapping>

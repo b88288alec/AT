@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class catalog="TFHK" name="com.tfhk.curfile.model.CurFile" table="cur_file">
+  <composite-id class="com.tfhk.curfile.model.CurFileId" mapped="false"
+   name="id" unsaved-value="undefined">
+   <key-property name="filePath" type="string">
+    <column length="50" name="FILE_PATH"/>
+   </key-property>
+   <key-property name="account" type="string">
+    <column length="30" name="account"/>
+   </key-property>
+  </composite-id>
+  <property generated="never" lazy="false" name="fileName" type="string">
+   <column length="50" name="FILE_NAME" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="folderPath" type="string">
+   <column length="50" name="FOLDER_PATH"/>
+  </property>
+  <property generated="never" lazy="false" name="mineType" type="string">
+   <column length="50" name="mine_type"/>
+  </property>
+  <property generated="never" lazy="false" name="updateDate" type="date">
+   <column length="10" name="update_date"/>
+  </property>
+  <property generated="never" lazy="false" name="uploadDate" type="date">
+   <column length="10" name="upload_date"/>
+  </property>
+  <property generated="never" lazy="false" name="fileType" type="string">
+   <column length="50" name="FILE_TYPE"/>
+  </property>
+ </class>
+</hibernate-mapping>

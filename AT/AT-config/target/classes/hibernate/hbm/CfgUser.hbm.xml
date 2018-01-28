@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class catalog="TFHK" name="com.tfhk.cfguser.model.CfgUser" table="cfg_user">
+  <id name="account" type="string">
+   <column length="30" name="account"/>
+   <generator class="assigned"/>
+  </id>
+  <property generated="never" lazy="false" name="nameEn" type="string">
+   <column length="50" name="name_en"/>
+  </property>
+  <property generated="never" lazy="false" name="nameCh" type="string">
+   <column length="50" name="name_ch"/>
+  </property>
+  <property generated="never" lazy="false" name="password" type="string">
+   <column length="30" name="password" not-null="true"/>
+  </property>
+ </class>
+</hibernate-mapping>

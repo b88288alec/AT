@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class catalog="TFHK"
+  name="com.tfhk.cfgrootpath.model.CfgRootpathMapping" table="cfg_rootpath_mapping">
+  <composite-id class="com.tfhk.cfgrootpath.model.CfgRootpathMappingId"
+   mapped="false" name="id" unsaved-value="undefined">
+   <key-property name="rootPath" type="string">
+    <column length="50" name="ROOT_PATH"/>
+   </key-property>
+   <key-property name="account" type="string">
+    <column length="30" name="account"/>
+   </key-property>
+  </composite-id>
+  <property generated="never" lazy="false" name="fileType" type="string">
+   <column length="50" name="FILE_TYPE"/>
+  </property>
+ </class>
+</hibernate-mapping>
