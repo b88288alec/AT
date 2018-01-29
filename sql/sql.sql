@@ -54,6 +54,6 @@ create table CUR_FILE (
     primary key(FILE_PATH, account)
 );
 
-insert into CFG_USER(account, name_en, name_ch, password) values('b88288alec', 'Alec Tsui', '崔培楨', '8267123a');
+insert into CFG_USER(account, name_en, name_ch, password) values('abc123', 'Ziv Fat', '肥宅', '12345');
 
 select * from cfg_user where account = 'b88288alec'
