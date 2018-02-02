@@ -32,6 +32,10 @@
 	
 	<mvc:annotation-driven />
 	
+	<mvc:resources location="/" mapping="/**"/>
+	<mvc:resources mapping="/assets/**" location="/assets/"  order="-1"/>
+	<mvc:resources mapping="/index.html" location="/index.html"  order="-1"/>
+	
 	<!-- 根據用戶端的不同的請求決定不同的view進行回應, 如 /blog/1.json, /blog/1.xml, /blog/1.html -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver" >
 		

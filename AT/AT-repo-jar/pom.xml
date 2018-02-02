@@ -17,6 +17,7 @@
 		<c3p0.version>0.9.5.2</c3p0.version>
 		<freemarker.version>2.3.23</freemarker.version>
 		<jackson.version>2.9.2</jackson.version>
+		<commons-io.version>2.5</commons-io.version>
 	</properties>
 
 	<dependencies>
@@ -114,6 +115,13 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
 			<version>${jackson.version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
 		</dependency>
 
 	</dependencies>
