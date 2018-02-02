@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="TFHK">
+		<class>com.jpa.model.CfgFolder</class>
+		<class>com.jpa.model.CfgFolderId</class>
+		<class>com.jpa.model.CfgParam</class>
+		<class>com.jpa.model.CfgRootpathMapping</class>
+		<class>com.jpa.model.CfgRootpathMappingId</class>
+		<class>com.jpa.model.CfgUser</class>
+		<class>com.jpa.model.CurFile</class>
+		<class>com.jpa.model.CurFileId</class>
+	</persistence-unit>
+</persistence>

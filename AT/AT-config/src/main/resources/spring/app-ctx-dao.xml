@@ -32,36 +32,27 @@
 		<property name="preferredTestQuery" value="SELECT 1" />
 	</bean>
 	
-	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" destroy-method="destroy"> 
-        <property name="dataSource" ref="tfhkDataSource"/> 
-        <property name="mappingResources"> 
-            <list> 
-                <value>hibernate/hbm/CfgFolder.hbm.xml</value> 
-                <value>hibernate/hbm/CfgParam.hbm.xml</value> 
-                <value>hibernate/hbm/CfgRootpathMapping.hbm.xml</value> 
-                <value>hibernate/hbm/CfgUser.hbm.xml</value> 
-                <value>hibernate/hbm/CurFile.hbm.xml</value> 
-            </list> 
-        </property> 
-        <property name="hibernateProperties"> 
-            <props> 
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop> 
-                <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</prop>
-                <prop key="hibernate.transaction.coordinator_class">jdbc</prop>
-                <prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate5.SpringSessionContext</prop>
-            </props> 
-        </property> 
-    </bean>
+	<bean id="tfhkEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+      <property name="dataSource" ref="tfhkDataSource" />
+      <property name="persistenceXmlLocation" value="classpath:jpa/persistence.xml"/>
+      <property name="packagesToScan" value="com.tfhk.*" />
+      <property name="jpaVendorAdapter">
+         <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+      </property>
+      <property name="jpaProperties">
+         <props>
+            <prop key="hibernate.hbm2ddl.auto">validate</prop>
+            <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+            <prop key="hibernate.show_sql">true</prop>
+			      <prop key="hibernate.format_sql">false</prop>		
+         </props>
+      </property>
+   </bean>
+      
+    <bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">  
+        <property name="entityManagerFactory" ref="tfhkEntityManagerFactory"/>  
+    </bean>  
     
-    <tx:annotation-driven />
+    <tx:annotation-driven transaction-manager="txManager" proxy-target-class="true" /> 
     
-    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
-        <property name="sessionFactory" ref="sessionFactory"/> 
-    </bean>
-    
-<!--     <bean id="cfgUser" class="com.tfhk.cfguser.dao.imp.CfgUserDaoImp"> -->
-<!--         <property name="hibernateTemplate" ref="hibernateTemplate"/>  -->
-<!--     </bean> -->
-
 </beans>

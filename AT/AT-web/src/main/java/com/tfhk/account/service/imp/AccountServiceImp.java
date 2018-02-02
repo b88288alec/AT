@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.tfhk.account.service.IAccontService;
 import com.tfhk.cfguser.dao.ICfgUserDao;
-import com.tfhk.cfguser.model.CfgUser;
+import com.tfhk.jpa.model.CfgUser;
 
 @Service
 public class AccountServiceImp implements IAccontService {

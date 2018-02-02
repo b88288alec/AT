@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.tfhk.account.service.IAccontService;
-import com.tfhk.cfguser.model.CfgUser;
+import com.tfhk.jpa.model.CfgUser;
 
 @Controller
 @Scope(value = "prototype")
