@@ -17,6 +17,18 @@
             http://www.springframework.org/schema/mvc
             http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
             ">
+    
+    <bean id="propertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<array>
+				<value>classpath:properties/hibernate.properties</value>
+				<value>classpath:properties/jdbc.properties</value>
+			</array>
+		</property>
+		<property name="fileEncoding" value="UTF-8" />
+	</bean>
+	
+<!-- 	<context:property-placeholder location="classpath:properties/*" file-encoding="UTF-8" ignore-unresolvable="true" /> -->
             
 	<!-- 自動搜索@xxx 進行spring injection -->
 	<context:component-scan base-package="com.test.*"/>

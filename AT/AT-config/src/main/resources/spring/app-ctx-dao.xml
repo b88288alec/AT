@@ -15,10 +15,10 @@
 
 	<bean id="tfhkDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
-		<property name="driverClass" value="com.mysql.jdbc.Driver" />
-		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/TFHK?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf-8" />
-		<property name="user" value="root" />
-		<property name="password" value="12345" />
+		<property name="driverClass" value="${jdbc.driverClass}" />
+		<property name="jdbcUrl" value="${jdbc.jdbcUrl}" />
+		<property name="user" value="${jdbc.user}" />
+		<property name="password" value="${jdbc.password}" />
 		<property name="minPoolSize" value="5" />
 		<property name="maxPoolSize" value="100" />
 		<property name="maxIdleTime" value="1800" />
@@ -41,10 +41,10 @@
       </property>
       <property name="jpaProperties">
          <props>
-            <prop key="hibernate.hbm2ddl.auto">validate</prop>
-            <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-            <prop key="hibernate.show_sql">true</prop>
-			      <prop key="hibernate.format_sql">false</prop>		
+            <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+            <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+            <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+			      <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>		
          </props>
       </property>
    </bean>
