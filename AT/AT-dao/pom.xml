@@ -20,14 +20,7 @@
 
 		<dependency>
 			<groupId>ATDP</groupId>
-			<artifactId>AT-repo-jar</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<type>pom</type>
-		</dependency>
-		
-		<dependency>
-			<groupId>ATDP</groupId>
-			<artifactId>AT-config</artifactId>
+			<artifactId>AT-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 

@@ -28,5 +28,6 @@
     <module>AT-dao</module>
     <module>AT-config</module>
     <module>AT-repo-jar</module>
+    <module>AT-common</module>
   </modules>
 </project>

@@ -23,6 +23,7 @@
 			<array>
 				<value>classpath:properties/hibernate.properties</value>
 				<value>classpath:properties/jdbc.properties</value>
+				<value>classpath:properties/system.properties</value>
 			</array>
 		</property>
 		<property name="fileEncoding" value="UTF-8" />
