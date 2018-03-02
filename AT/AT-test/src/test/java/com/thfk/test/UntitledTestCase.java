@@ -22,7 +22,7 @@ public class UntitledTestCase {
 
   @Before
   public void setUp() throws Exception {
-	System.setProperty("webdriver.chrome.driver", "src/test/resources/webdriver/chromedriver.exe");
+	System.setProperty("webdriver.chrome.driver", "src/test/resources/webdriver/chromedriver_linux64");
 	driver = new ChromeDriver();
     baseUrl = "https://www.katalon.com/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
