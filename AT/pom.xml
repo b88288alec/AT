@@ -29,5 +29,6 @@
     <module>AT-config</module>
     <module>AT-repo-jar</module>
     <module>AT-common</module>
+    <module>AT-test</module>
   </modules>
 </project>
